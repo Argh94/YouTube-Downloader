@@ -1,26 +1,44 @@
-```bash <(curl -fsSL https://raw.githubusercontent.com/Argh94/YouTube-Downloader/refs/heads/main/install-ytd.sh)```
-# YouTube Downloader Pro
-
-A sleek and powerful Bash script for downloading YouTube videos and audio in multiple formats using `yt-dlp` on **Termux** (Android). With an intuitive menu-driven interface, you can effortlessly download videos in resolutions from 360p to 4K or extract high-quality MP3 audio.
-
-## ✨ Features
-- Download videos in **360p, 480p, 720p, 1080p, or 4K**.
-- Extract **MP3 audio** with top-tier quality.
-- Clean and user-friendly format selection menu.
-- Saves files to `/storage/emulated/0/Pictures/YouTubeVideos/` (accessible in your gallery).
-- Smart error handling with logs saved to `~/ytdlp_errors.log`.
-- No authentication required for most videos.
-- One-command installation for seamless setup.
-
-## 🚀 Quick Start
-
-### Prerequisites
-- **Termux**: Download from [F-Droid](https://f-droid.org/en/packages/com.termux/) or [GitHub](https://github.com/termux/termux-app).
-- **Internet Connection**: Required for downloading videos and setup.
-- **Storage Access**: Termux will request permission during installation.
-
-### Installation
-Install everything with a single command (you only need to run this once):
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/Argh94/YouTube-Downloader/refs/heads/main/install-ytd.sh)
 
+# Advanced YouTube Downloader
+
+![GitHub](https://img.shields.io/github/license/Argh94/YouTube-Downloader)
+![GitHub last commit](https://img.shields.io/github/last-commit/Argh94/YouTube-Downloader)
+![GitHub issues](https://img.shields.io/github/issues/Argh94/YouTube-Downloader)
+
+**Advanced YouTube Downloader** is a powerful and user-friendly script designed for downloading YouTube videos and audio directly on your Android device using **Termux**. Whether you want to save YouTube Shorts, full-length videos, or extract high-quality audio, this script offers a seamless experience with multiple format and resolution options.
+
+Developed by **[Argh94](https://github.com/Argh94)**, this project is perfect for anyone looking to download YouTube content effortlessly with a customizable and robust tool.
+
+## Features
+
+- **Multiple Format Options**: Download videos in resolutions from 360p to 4K (2160p) or extract audio as MP3.
+- **YouTube Shorts Support**: Seamlessly download YouTube Shorts and regular videos.
+- **Automatic Video and Audio Merging**: Combines video and audio streams into a single `.mp4` file using `ffmpeg`.
+- **Customizable File Naming**: Saves files with meaningful names (title + video ID) to avoid naming issues.
+- **Robust Error Handling**: Handles common issues like network errors, authentication requirements, and insufficient storage.
+- **Cookie Support**: Optional authentication for downloading restricted videos (e.g., age-restricted Shorts).
+- **Notification Support**: Displays download completion notifications via Termux (requires `termux-api`).
+- **Lightweight and Fast**: Optimized for Termux on Android with minimal dependencies.
+- **Open Source**: Fully customizable and maintained under the [MIT License](#license).
+
+## Prerequisites
+
+Before using the script, ensure you have the following:
+
+- **Android Device**: Running Android 7.0 or higher.
+- **Termux**: Install the Termux app from [F-Droid](https://f-droid.org/packages/com.termux/) or [GitHub](https://github.com/termux/termux-app/releases). (Note: Google Play version is outdated and not recommended.)
+- **Termux:API (Optional)**: For download completion notifications, install the [Termux:API app](https://f-droid.org/packages/com.termux.api/) from F-Droid or Google Play.
+- **Storage Access**: Grant Termux storage permission to save files in `/storage/emulated/0/Pictures/YouTubeVideos`.
+- **Internet Connection**: Stable Wi-Fi or mobile data for downloading videos.
+
+## Installation
+
+Follow these steps to set up the Advanced YouTube Downloader on your device:
+
+### Step 1: Install Termux
+1. Download and install **Termux** from [F-Droid](https://f-droid.org/packages/com.termux/) or [GitHub](https://github.com/termux/termux-app/releases).
+2. Open Termux and update the package list:
+   ```bash
+   pkg update && pkg upgrade -y
