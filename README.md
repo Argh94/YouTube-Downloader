@@ -23,3 +23,16 @@ A sleek and powerful Bash script for downloading YouTube videos and audio in mul
 Install everything with a single command (you only need to run this once):
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/Argh94/YouTube-Downloader/refs/heads/main/install-ytd.sh)
+
+This command:
+- Installs dependencies (`python`, `yt-dlp`).
+- Requests storage access (type `y` when prompted).
+- Downloads the script to `~/bin/termux-url-opener`.
+- Sets up a download folder in `/storage/emulated/0/Pictures/YouTubeVideos/`.
+
+After installation, the script is ready to use—no need to reinstall!
+
+### Verify Setup
+Check if `yt-dlp` is installed:
+```bash
+yt-dlp --version
