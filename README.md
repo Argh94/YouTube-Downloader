@@ -5,38 +5,95 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/Argh94/YouTube-Downloader)
 ![GitHub issues](https://img.shields.io/github/issues/Argh94/YouTube-Downloader)
 
-**Advanced YouTube Downloader** is a powerful and user-friendly script designed for downloading YouTube videos and audio directly on your Android device using **Termux**. Whether you want to save YouTube Shorts, full-length videos, or extract high-quality audio, this script offers a seamless experience with multiple format and resolution options.
+# YouTube Downloader Installer Script
 
-Developed by **[Argh94](https://github.com/Argh94)**, this project is perfect for anyone looking to download YouTube content effortlessly with a customizable and robust tool.
+This repository contains an automated script to install the **Advanced YouTube Downloader Script** on Termux. It ensures all dependencies are installed, required permissions are granted, and the downloader script is set up for seamless YouTube video/audio downloading.
 
 ## Features
 
-- **Multiple Format Options**: Download videos in resolutions from 360p to 4K (2160p) or extract audio as MP3.
-- **YouTube Shorts Support**: Seamlessly download YouTube Shorts and regular videos.
-- **Automatic Video and Audio Merging**: Combines video and audio streams into a single `.mp4` file using `ffmpeg`.
-- **Customizable File Naming**: Saves files with meaningful names (title + video ID) to avoid naming issues.
-- **Robust Error Handling**: Handles common issues like network errors, authentication requirements, and insufficient storage.
-- **Cookie Support**: Optional authentication for downloading restricted videos (e.g., age-restricted Shorts).
-- **Notification Support**: Displays download completion notifications via Termux (requires `termux-api`).
-- **Lightweight and Fast**: Optimized for Termux on Android with minimal dependencies.
-- **Open Source**: Fully customizable and maintained under the [MIT License](#license).
+- **Automated Installation**:
+  - Installs required dependencies (`yt-dlp`, `ffmpeg`, `python`, and more)
+  - Configures Termux for storage access
+  - Downloads and sets up the downloader script
+- **Ease of Use**:
+  - Automatically handles YouTube links shared with Termux
+  - Saves downloads directly to your gallery
+- **Error Handling**:
+  - Provides troubleshooting messages for common issues
 
-## Prerequisites
+## Quick Installation
 
-Before using the script, ensure you have the following:
+Run the following command in Termux:
 
-- **Android Device**: Running Android 7.0 or higher.
-- **Termux**: Install the Termux app from [F-Droid](https://f-droid.org/packages/com.termux/) or [GitHub](https://github.com/termux/termux-app/releases). (Note: Google Play version is outdated and not recommended.)
-- **Termux:API (Optional)**: For download completion notifications, install the [Termux:API app](https://f-droid.org/packages/com.termux.api/) from F-Droid or Google Play.
-- **Storage Access**: Grant Termux storage permission to save files in `/storage/emulated/0/Pictures/YouTubeVideos`.
-- **Internet Connection**: Stable Wi-Fi or mobile data for downloading videos.
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/Argh94/YouTube-Downloader/refs/heads/main/install-ytd.sh)
+```
 
-## Installation
+This command will:
+1. Install all required dependencies.
+2. Grant necessary storage permissions.
+3. Download and set up the **Advanced YouTube Downloader Script**.
 
-Follow these steps to set up the Advanced YouTube Downloader on your device:
+## Usage
 
-### Step 1: Install Termux
-1. Download and install **Termux** from [F-Droid](https://f-droid.org/packages/com.termux/) or [GitHub](https://github.com/termux/termux-app/releases).
-2. Open Termux and update the package list:
+### Downloading Videos or Audio from YouTube
+
+1. **Share a YouTube Link**:
+   - Open the YouTube app.
+   - Share any video link to Termux.
+   - The script will automatically handle the download.
+
+2. **Manual Execution**:
+   Run the script directly with a YouTube URL:
    ```bash
-   pkg update && pkg upgrade -y
+   ~/bin/termux-url-opener "https://www.youtube.com/watch?v=VIDEO_ID"
+   ```
+   Replace `VIDEO_ID` with the actual YouTube video ID or full URL.
+
+### Output Location
+
+All downloaded files are saved to:
+```
+/storage/emulated/0/Pictures/YouTubeVideos
+```
+
+## Troubleshooting
+
+### Common Errors and Fixes
+
+- **yt-dlp Installation Failed**:
+  - Ensure you have an active internet connection.
+  - Manually update `yt-dlp`:
+    ```bash
+    python -m pip install yt-dlp --user --upgrade
+    ```
+
+- **Cannot Write to YouTubeVideos Folder**:
+  - Grant storage permissions in Termux:
+    ```bash
+    termux-setup-storage
+    ```
+
+- **Main Script Download Failed**:
+  - Verify the script URL in the repository (`ytd.sh`).
+  - Manually download the script using `wget`:
+    ```bash
+    wget -O ~/bin/termux-url-opener "https://raw.githubusercontent.com/Argh94/YouTube-Downloader/refs/heads/main/ytd.sh"
+    chmod +x ~/bin/termux-url-opener
+    ```
+
+## Updating `yt-dlp`
+
+To ensure the latest version of `yt-dlp`, run:
+```bash
+python -m pip install yt-dlp --user --upgrade
+```
+
+## Author
+
+- **Name**: Argh94
+- **GitHub**: [Argh94](https://github.com/Argh94)
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
