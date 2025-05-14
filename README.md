@@ -4,6 +4,7 @@
 ![GitHub](https://img.shields.io/github/license/Argh94/YouTube-Downloader)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Argh94/YouTube-Downloader)
 ![GitHub issues](https://img.shields.io/github/issues/Argh94/YouTube-Downloader)
+![Visitor Count](https://komarev.com/ghpvc/?username=Argh94&YouTube-Downloader&label=ProfileViews)
 
 # YouTube Downloader Installer Script
 
