@@ -6,6 +6,8 @@
 ![GitHub issues](https://img.shields.io/github/issues/Argh94/YouTube-Downloader)
 ![Visitor Count](https://komarev.com/ghpvc/?username=Argh94&YouTube-Downloader&label=ProfileViews)
 
+![image](https://github.com/Argh94/YouTube-Downloader/blob/main/IMG_20250518_204014.jpg)
+
 # YouTube Downloader Installer Script
 
 This repository contains an automated script to install the **Advanced YouTube Downloader Script** on Termux. It ensures all dependencies are installed, required permissions are granted, and the downloader script is set up for seamless YouTube video/audio downloading.
